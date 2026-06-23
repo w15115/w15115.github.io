@@ -179,6 +179,7 @@ cat > "$LAUNCHER_PATH" <<EOF2
 #!/usr/bin/env bash
 set -euo pipefail
 SCRIPT_DIR="\$(cd "\$(dirname "\${BASH_SOURCE[0]}")" && pwd)"
+export CLAUDE_CONFIG_DIR="\$SCRIPT_DIR/.claude"
 exec "\$SCRIPT_DIR/bin/claude-current" "\$@"
 EOF2
 chmod +x "$LAUNCHER_PATH"
